@@ -9,6 +9,10 @@ class PVP extends Battle {
   ) {
     super(player1);
   }
+
+  fight(): number {
+    return super.fight();
+  }
 }
 
 export default PVP;
