@@ -37,7 +37,7 @@ class Character implements Fighter {
     enemy.receiveDamage(this._strength);
   }
 
-  special?(enemy: Fighter): void {
+  special?(enemy: Fighter | SimpleFighter): void {
     const increasedStrength = getRandomInt(1, 10);
     enemy.receiveDamage(this._strength * increasedStrength);
   }
