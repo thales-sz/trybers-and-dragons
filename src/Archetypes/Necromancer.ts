@@ -5,8 +5,8 @@ class Necromancer extends Archetype {
   private static _instances = 0;
   private _energyType: EnergyType;
   
-  constructor(name: string, special: number, cost: number) {
-    super(name, special, cost);
+  constructor(name: string) {
+    super(name);
     this._energyType = 'mana';
     Necromancer.addArchetypeInstance();
   }

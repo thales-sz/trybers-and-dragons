@@ -3,11 +3,10 @@ import Archetype from './Archetype';
 
 class Mage extends Archetype {
   private static _instances = 0;
-  private _energyType: EnergyType;
+  private _energyType: EnergyType = 'mana';
 
-  constructor(name: string, special: number, cost: number) {
-    super(name, special, cost);
-    this._energyType = 'mana';
+  constructor(name: string) {
+    super(name);
     Mage.addArchetypeInstance();
   }
 
@@ -25,7 +24,3 @@ class Mage extends Archetype {
 }
 
 export default Mage;
-
-const mage1 = new Mage('Maguinho', 5, 15);
-
-console.log(mage1.name);
