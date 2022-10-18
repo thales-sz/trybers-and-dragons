@@ -3,10 +3,11 @@ import Archetype from './Archetype';
 
 class Ranger extends Archetype {
   private static _instances = 0;
-  private _energyType: EnergyType = 'stamina';
+  private _energyType: EnergyType;
   
   constructor(name: string, special: number, cost: number) {
     super(name, special, cost);
+    this._energyType = 'stamina';
     Ranger.addArchetypeInstance();
   }
 
