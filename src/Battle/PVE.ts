@@ -5,18 +5,19 @@ import Battle from './Battle';
 
 class PVE extends Battle {
   constructor(
-    private playerE: Character | SimpleFighter | Fighter,
+    private playerE: Character | Fighter,
     private monsters: Array<Monster | SimpleFighter | Fighter>,
   ) {
     super(playerE);
   }
 
   fight(): number {
-    while (this.playerE.lifePoints > 0
-      || !this.monsters.every((enemy) => enemy.lifePoints === 0)) {
-      this.monsters.forEach((defEnemy) => this.playerE.attack(defEnemy));
-      this.monsters.forEach((attcEnemy) => attcEnemy.attack(this.playerE));
-    }
+    this.monsters.forEach((monster) => {
+      while (this.playerE.lifePoints > 0 && monster.lifePoints > 0) {
+        this.playerE.attack(monster);
+        monster.attack(this.player);
+      }
+    });
     return super.fight();
   }
 }
